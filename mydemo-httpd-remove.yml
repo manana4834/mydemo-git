@@ -4,7 +4,12 @@
   #remote_user: root
 
   tasks:
+  - name: Ensure that apache is stopped
+    ansible.builtin.service:
+      name: httpd
+      state: stopped
+
   - name: Ensure apache is at the latest version
     ansible.builtin.yum:
       name: httpd
-      state: latest
+      state: remove
