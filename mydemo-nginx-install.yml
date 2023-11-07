@@ -6,5 +6,5 @@
   tasks:
   - name: Ensure apache is at the latest version
     ansible.builtin.yum:
-      name: nginx
+      name: httpd
       state: latest
