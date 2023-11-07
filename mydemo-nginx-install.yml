@@ -1,5 +1,10 @@
-- name: Install a list of packages
-  yum:
-    name:
-      - nginx
-    state: present
+---
+- name: Update web servers
+  #hosts: webservers
+  #remote_user: root
+
+  tasks:
+  - name: Ensure apache is at the latest version
+    ansible.builtin.yum:
+      name: nginx
+      state: latest
